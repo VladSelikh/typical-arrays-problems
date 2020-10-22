@@ -14,5 +14,8 @@ exports.max = function max (array) {
 exports.avg = function avg (array) {
   if (array === undefined || array.length === 0)
   return 0;
-  else return Math.avg(...array);
+  else {
+    const reducer = (accumulator, currentValue) => accumulator + currentValue;
+    return array.reduce(reducer) / array.length;
+  }
 }
